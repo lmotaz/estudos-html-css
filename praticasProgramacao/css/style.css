@@ -1,0 +1,56 @@
+body{
+                background-color: rgba(39, 0, 0, 0.623);
+                color: white;
+                margin: 0;
+            }
+            
+            h1, h2{
+                color: red;
+                text-align: center;
+            }
+            
+            h1{
+                text-transform: uppercase;
+            }
+
+            p{
+                text-align: justify;            
+            }
+
+            header{
+                background-color: azure;
+                color: black;
+            }
+
+            main{
+                margin: auto 20%;
+            }
+
+            footer{
+                background-color: azure;
+                color: black
+            }
+
+            .destaque{
+                background-color: brown;
+                color: white;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            #img-logo{
+                width: 50px;
+            }
+
+            nav li{
+                display: inline;
+                margin-left: 20px;
+                color: rgba(255, 0, 0, 0.747);
+                font-weight: bold;
+                border: 2px solid;
+                padding: 5px;
+            }
+
+            nav{
+                float: right;
+            }
