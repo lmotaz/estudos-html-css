@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora com Select</title>
+</head>
+<body>
+
+  <h2>Calculadora</h2>
+
+  <label>Número 1: <input type="text" id="n1"></label><br><br>
+
+  <label>Número 2: <input type="text" id="n2"></label><br><br>
+
+  <label>Operação:
+    <select id="operacao">
+      <option value="soma">Soma</option>
+      <option value="sub">Subtração</option>
+      <option value="mult">Multiplicação</option>
+      <option value="div">Divisão</option>
+    </select>
+  </label><br><br>
+
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    
+    function calcular() {
+  // 1. Pegar o valor do primeiro número (input com id 'n1') e converter para número
+  const n1 = parseFloat(document.getElementById('n1').value);
+
+  // 2. Pegar o valor do segundo número (input com id 'n2') e converter para número
+  const n2 = parseFloat(document.getElementById('n2').value);
+
+  // 3. Pegar o valor da operação selecionada no <select> (id 'operacao')
+  const operacao = document.getElementById('operacao').value;
+
+  // 4. Criar uma variável para armazenar o resultado
+  let resultado;
+
+  // 5. Validar se os valores são números
+  if (isNaN(n1) || isNaN(n2)) {
+    document.getElementById('resultado').textContent = "Por favor, digite números válidos!";
+    return; // Para a execução aqui porque não tem números válidos
+  }
+
+  // 6. Usar switch para decidir a operação
+  switch(operacao) {
+    case 'soma':
+      resultado = n1 + n2;
+      break;
+
+    case 'sub':
+      resultado = n1 - n2;
+      break;
+
+    case 'mult':
+      resultado = n1 * n2;
+      break;
+
+    case 'div':
+      // Cuidado com divisão por zero!
+      if (n2 === 0) {
+        document.getElementById('resultado').textContent = "Erro: não é possível dividir por zero!";
+        return;
+      }
+      resultado = n1 / n2;
+      break;
+
+    default:
+      document.getElementById('resultado').textContent = "Operação inválida!";
+      return;
+  }
+
+  // 7. Mostrar o resultado no parágrafo com id 'resultado'
+  document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+}
+
+    
+
+  </script>
+
+</body>
+</html>
